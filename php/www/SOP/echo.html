@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Echo input</title>
+    <script>
+      function echo()
+      {
+        var c = document.createElement("P");
+        c.innerHTML = document.navbar.url.value;
+        document.body.appendChild(c);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>An HTML Document</h1>
+    <form onsubmit="echo();" name="navbar">
+    <input type="text" name="url">
+    <input type="button" name="echourl" value="echo" onclick="echo();">
+    </form>
+  </body>
+</html>

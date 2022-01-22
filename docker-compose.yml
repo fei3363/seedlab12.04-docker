@@ -1,0 +1,52 @@
+version: "3"
+
+services:
+  phpapache:
+    build: ./php
+    image: seed-image-www
+    container_name: elgg-10.9.0.5
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - db
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.5
+  db:
+    build: ./mysql
+    image: seed-image-mysql
+    container_name: mysql-10.9.0.6
+    command: --default-authentication-plugin=mysql_native_password
+    tty: true
+    restart: always
+    ports:
+      - "3306:3306"
+    cap_add:
+      - SYS_NICE
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.6
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-10.9.0.7
+    ports:
+      - "8080:80"
+    links:
+      - db:db
+    environment:
+      MYSQL_USER: "apache"
+      MYSQL_PASSWORD: "apache"
+      MYSQL_ROOT_PASSWORD: "seedubuntu"
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.7
+networks:
+  net-10.9.0.0:
+    name: net-10.9.0.0
+    ipam:
+      config:
+        - subnet: 10.9.0.0/24

@@ -1,0 +1,68 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+
+	DocumentRoot /var/www
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	
+
+	ErrorLog /var/log/apache2/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /var/log/apache2/access.log combined
+
+    Alias /doc/ "/usr/share/doc/"
+    <Directory "/usr/share/doc/">
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    </Directory>
+
+</VirtualHost>
+
+
+<VirtualHost *:80>
+        ServerName www.heartbleedlabelgg.com
+        DocumentRoot /var/www/SeedElgg
+
+	DirectoryIndex index.php 
+
+	RewriteEngine on 
+	RewriteCond %{HTTPS} off 
+	RewriteCond %{HTTP_HOST}	^www\.heartbleedlabelgg\.com [NC]
+	RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R] 
+        ErrorLog /var/log/apache2/error.log
+        LogLevel debug
+        CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
+
+
+<VirtualHost *:443> 
+	 
+		DocumentRoot /var/www/SeedElgg 
+		ServerName www.heartbleedlabelgg.com 
+		DirectoryIndex index.php 
+
+		SSLEngine On 
+		SSLCertificateFile 		/etc/apache2/ssl/apache.crt
+		SSLCertificateKeyFile 	/etc/apache2/ssl/apache.key
+
+
+</VirtualHost> 
+
+
+

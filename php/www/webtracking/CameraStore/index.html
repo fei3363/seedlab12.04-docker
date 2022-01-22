@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>SEED Web Tracking Lab</title>
+	<meta name="robots" content="all" />
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+	<link href="" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<link media="only screen and (max-device-width: 480px) and (min-device-width: 320px)" href="css/mobile.css" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>	
+	<script type="text/javascript">
+		window.addEventListener('load', function() {
+		    setTimeout(scrollTo, 0, 0, 1);
+		}, false);
+	</script>
+	<style>
+        	#Slider {
+               	}
+        	#Actual {
+            		background: black;
+            		color: White;
+			padding: 10px;
+        	}
+        	
+		.slidedown {
+            		max-height: 0;            
+            		overflow-y: hidden;
+            		-webkit-transition: max-height 0.2s ease-in-out;
+            		-moz-transition: max-height 0.2s ease-in-out;
+            		-o-transition: max-height 0.2s ease-in-out;
+            		transition: max-height 0.2s ease-in-out;
+        	}
+        
+        	.slideup {
+            		max-height: 0;            
+            		overflow-y: hidden;
+            		-webkit-transition: max-height 1.8s ease-in-out;
+            		-moz-transition: max-height 1.8s ease-in-out;
+            		-o-transition: max-height 1.8s ease-in-out;
+            		transition: max-height 1.8s ease-in-out;
+        	}
+        
+        	.slidedown {            
+            		max-height: 60px ;                    
+        	}    
+    	</style>
+	</head>
+	<body>
+		<div id="intro">
+		<a href="intro" class="nav"><img src="images/Logo.png" id="logo"/></a>
+		
+		<div id="unfixed" class="fix">
+		<br><br><br>
+		</div>
+		</div>
+
+		<div class="container" style="padding: 10px">
+			<div class="section" id="one">				
+				<img width="900" height="350" src="images/K-01_reddot_homepage_banner.jpg" id="banner"/>
+				<!--<h2>Click to buy items you want. It's all free.</h2><br/>				-->
+								
+				
+				<table>				
+				<tr>
+					<td class="ItemStyle">
+					<div>
+					<form name="input" action="productDetail.php" method="post">
+						<a href="#"><img src="images/c1.jpg" id="mobile1"/></a>
+						<input class="btnViewDetails" type="submit" value="View Details"></input>
+						<input type="hidden" value="Nikon" name="hdnMobileName"/>
+						<input type="hidden" value="c1" name="hdnMobileId"/>
+						<input type="hidden" value="5890502497057826" name="hdnGuid"/>
+					</form>
+					</div>
+					</td>
+					<td class="ItemStyle">
+					<div>
+					<form name="input" action="productDetail.php" method="post">
+						<a href="#"><img src="images/c2.jpg" id="mobile1"/></a>
+						<input class="btnViewDetails" type="submit" value="View Details"></input>
+						<input type="hidden" value="Canon" name="hdnMobileName"/>
+						<input type="hidden" value="c2" name="hdnMobileId"/>
+						<input type="hidden" value="6449377887088520" name="hdnGuid"/>
+					</form>
+					</div>
+					</td>
+					<td class="ItemStyle">
+					<div>
+					<form name="input" action="productDetail.php" method="post">
+						<a href="#"><img src="images/c3.jpg" id="mobile1"/></a>
+						<input class="btnViewDetails" type="submit" value="View Details"></input>
+						<input type="hidden" value="Lumix" name="hdnMobileName"/>
+						<input type="hidden" value="c3" name="hdnMobileId"/>
+						<input type="hidden" value="8089326451339674" name="hdnGuid"/>
+					</form>
+					</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="ItemStyle">
+					<div >
+					<form name="input" action="productDetail.php" method="post">
+						<a href="#" class="nav"><img src="images/c4.jpg" id="mobile1"/></a>
+						<input class="btnViewDetails" type="submit" value="View Details"></input>	
+						<input type="hidden" value="Nikon" name="hdnMobileName"/>	
+						<input type="hidden" value="c4" name="hdnMobileId"/>					
+						<input type="hidden" value="7644794244489658" name="hdnGuid"/>
+					</form>
+					</div>
+					</td>
+					<td class="ItemStyle">
+					<div>
+					<form name="input" action="productDetail.php" method="post">
+						<a href="#" class="nav"><img src="images/c5.jpg" id="mobile1"/></a>
+						<input class="btnViewDetails" type="submit" value="View Details"></input>
+						<input type="hidden" value="Samsung" name="hdnMobileName"/>	
+						<input type="hidden" value="c5" name="hdnMobileId"/>							
+						<input type="hidden" value="6594500331683041" name="hdnGuid"/>
+					</form>
+					</div>
+					</td>
+					<td class="ItemStyle">
+					<div>
+					<form name="input" action="productDetail.php" method="post">
+						<a  href="#" class="nav"><img src="images/c6.jpg" id="mobile1"/></a>
+						<input class="btnViewDetails" type="submit" value="View Details" ></input>
+						<input type="hidden" value="Sony" name="hdnMobileName"/>	
+						<input type="hidden" value="c6" name="hdnMobileId"/>						
+						<input type="hidden" value="4293327407220900" name="hdnGuid"/>
+					</form>
+					</div>
+					</td>
+				</tr>
+				</table>						
+				
+      		<div id="Slider" class="slideup">
+        		<!-- content has to be wrapped so that the padding and margins don't effect the transition's height -->
+        		<div id="Actual">
+                		Congrats on your new purchase. Thanks for the business. See you everywhere ;) !
+        		</div>
+      			</div>
+		</div>
+</div>
+		<div id="footer">
+			<ul id="toes">
+				<li class="toes"><a href="#">Home</a></li>					
+			</ul>
+		</div>
+	</body>
+</html>
